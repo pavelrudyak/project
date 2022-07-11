@@ -1,0 +1,34 @@
+{% extends "pattern.html" %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/menuslyle.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/slyle.css') }}">
+{% endblock %}
+
+{% block content %}
+	<div id="menu">
+		<a href="prof.html"><img id="glav" src="{{ url_for('static', filename='/img/home.svg') }}"></br></a>
+		<!--<img id="news" src="image/news.svg">-->
+		<a><img id ='sms' src="{{ url_for('static', filename='/img/sms.svg') }}" /></a>
+		<a><img id="set" src="{{ url_for('static', filename='/img/set.svg') }}" /></a></a>
+	</div>
+
+    <div id="container">
+		<div class="ava">
+			<img id="ava" src="{{ url_for('static', filename='/img/avatar.svg') }}">
+		</div>
+		
+		<div id="dano">
+			<p  id="name">{{name}}</p>
+			<p class="dano">Роль - {{ role }}</p>
+			<p class="dano">email - {{ email }}</p>
+			<p class="dano">Кафедра/Факультет: {{ faculty }}</p>
+			<p class="dano">Должность/Направление(Группа): {{ group }}</p>
+
+		</div>
+		
+	
+	</div>
+
+{% endblock %}

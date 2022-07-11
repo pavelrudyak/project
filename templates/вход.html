@@ -1,0 +1,28 @@
+{% extends "pattern.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/vxodstyle.css') }}">
+{% endblock %}
+{% block content %}
+	<div id="podlog">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
+		<form method="post" action="/login">
+			<input id="log" name="email" type="text" placeholder="Логин"></br>
+			<input id="pas" name="password" type="password" placeholder="Пароль"></br>
+            <!-- <div class="field">
+                <label class="checkbox">
+                    <input type="checkbox">
+                    Remember me
+                </label>
+            </div> -->
+			<input id="knop" type="submit" value="Войти" name="knop">
+		</form>
+
+	</div>
+{% endblock %}
