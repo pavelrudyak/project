@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
- <head>
-   <title> {% block title %}{% endblock %} </title>
-    <meta charset="utf-8">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/menuslyle.css') }}">
     {% block style %}{% endblock %}
- </head>
- <body>
-    {% block content %}{% endblock %}
- </body>
+</head>
+
+<body>
+
+    <div id="menu">
+        <a href="prof.html"><img id="glav" src="home.svg"></br></a>
+        <!--<img id="news" src="image/news.svg">-->
+        <a><img id="sms" src="{{ url_for('static', filename='/img/sms.svg') }}"></a>
+        <a><img id="set" src="{{ url_for('static', filename='/img/set.svg') }}"></a>
+    </div>
+
+    <div>
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+</body>
+
 </html>

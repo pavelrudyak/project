@@ -1,0 +1,25 @@
+{% extends "pattern.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/menuslyle.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/slyle.css') }}">
+{% endblock %}
+
+{% block content %}
+<div id = "dano">
+<h1> Добавлениe задания</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="text" name="title" id="title" class="form-control" placeholder="title"><br>
+        <input type="text" name="text" id="text" class="form-control" placeholder="text"><br>
+        <select name="user" method="GET" action="/">
+            <option value=" " selected> </option>
+            {% for user in users %}
+              <option value="{{ user.name }}">{{user.name}}</option>
+            {% endfor %}
+          </select>
+        <input type="file" name="file" multiple>
+        <input type="submit" class="btn btn-success">
+
+    </form>
+</div>
+{% endblock %}

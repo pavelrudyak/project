@@ -1,0 +1,19 @@
+{% extends "pattern.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/menuslyle.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/slyle.css') }}">
+{% endblock %}
+
+{% block content %}
+<div id = "dano">
+    <h1>Все задания</h1>
+    {% for i in tasks %}
+    <div class="alert alert-info">
+        <h2> {{ i.title }}</h2>
+        <p> {{ i.text }}</p>
+        <p><b> {{ i.data }} {{ i.user_to }}</b></p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
